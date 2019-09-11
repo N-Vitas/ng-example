@@ -6,10 +6,10 @@ import { StreamComponent } from './stream/stream.component';
 import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [
-  { path: '', component: MoneyComponent },
+  { path: '', component: GamesComponent},
   { path: 'todo', component: TodosComponent },
   { path: 'stream', component: StreamComponent },
-  { path: 'games', component: GamesComponent },
+  { path: 'money', component: MoneyComponent },
 ];
 
 @NgModule({
