@@ -1,0 +1,10 @@
+<div>
+  <input
+    type="text"
+    placeholder="Добавить запись..."
+    [(ngModel)]="title"
+    (keydown.enter)="addTodo()"
+  >
+  <button (click)="addTodo()">Добавить запись</button>
+  <button (click)="todosService.generateTodos()">сгенерировать записи</button>
+</div>

@@ -1,0 +1,108 @@
+
+.box-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px;
+    width: 100%;
+    max-width: 75px;
+    max-height: 70px;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+    @media screen and (min-width:1380px) {
+    .box-container {
+      flex-direction: row
+    }
+}
+.color-white {
+    color: #fff;
+}
+.box-item {
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+  
+.flip-box {
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+  
+.flip-box-front, .flip-box-back {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    min-height: 70px;
+    cursor: pointer;
+}
+  
+.flip-box-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+.flip-box-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+  
+.flip-box .inner {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+    perspective: inherit;
+    z-index: 2;
+    overflow: hidden;    
+    transform: translateY(-50%) translateZ(60px) scale(.94);
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
+    -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
+    top: 50%;
+}
+
+.action .inner { overflow: inherit;}
+
+.flip-box-header {
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    text-shadow: 1px 10px 1px rgba(0, 0, 0, .5);
+    height: 40px;
+}
+  
+.flip-box p {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+  
+.flip-box-img {
+    margin-top: 5px;
+}
+  
+.flip-box-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+}

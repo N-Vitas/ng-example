@@ -1,0 +1,37 @@
+div {
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    margin: 0px auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    user-select: none;
+  
+    input {
+      flex-basis: 80%;
+      height: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      padding: 0 .5rem;
+    }
+  
+    button {
+      $color: #eee;
+      flex-basis: 20%;
+      height: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      background: $color;
+      transition: .3s all;
+      cursor: pointer;
+  
+      &:hover {
+        background: darken($color, 20%);
+      }
+    }
+  }
+  

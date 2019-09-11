@@ -1,0 +1,15 @@
+<div class="component">
+    <div class="left-container">
+        <button type="button" (click)="add()"><img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img"></button>
+    </div>
+    <div class="container">
+        <app-card *ngFor="let card of cards" [card]="card"></app-card>
+    </div>
+    <div class="rigth-container">
+        <app-card [card]="{ name: 'sjdfhksjdf', action: true }"></app-card>
+        <app-card [card]="{ name: 'sjdfhksjdf', action: true }"></app-card>
+        <app-card [card]="{ name: 'sjdfhksjdf', action: true }"></app-card>
+        <app-card [card]="{ name: 'sjdfhksjdf', action: true }"></app-card>
+        <app-card [card]="{ name: 'sjdfhksjdf', action: true }"></app-card>
+    </div>
+</div>

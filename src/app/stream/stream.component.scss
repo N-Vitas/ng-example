@@ -1,0 +1,19 @@
+
+button {
+  $color: #49b0f5;
+  color: white;
+  flex-basis: 20%;
+  min-width: 150px;
+  height: 25px;
+  margin: 5px;
+  border: 1px solid #49b0f5;
+  border-radius: 5px;
+  outline: none;
+  background: $color;
+  transition: .3s all;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($color, 20%);
+  }
+}

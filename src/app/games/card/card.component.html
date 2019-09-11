@@ -1,0 +1,15 @@
+<div class="box-container" (click)="change()">
+    <div class="box-item">
+    <div class="flip-box">
+        <div [@flipBoxFront]="card.action" class="flip-box-front text-center" style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
+        <div class="inner color-white">
+            <!-- <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img"> -->
+        </div>
+        </div>
+        <div [@flipBoxBack]="card.action" class="flip-box-back text-center" style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
+        <div class="inner color-white">
+            <div class="flip-box-header">{{card.name}}</div>
+        </div>
+        </div>
+    </div>
+</div>  

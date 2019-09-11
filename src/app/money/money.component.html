@@ -1,0 +1,9 @@
+<div>
+  <h3>Кароче долго обьяснять. Введи сумму и увидешь результат</h3>
+  <input
+    type="number"
+    placeholder="Введите число..."
+    [(ngModel)]="value"
+  >
+  <p>{{value | money: value}}</p>
+</div>
