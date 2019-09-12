@@ -1,0 +1,9 @@
+<div class="map">
+    <svg>
+        <path *ngFor="let region of regions" [ngClass]="region.action ? 'active': region.name" [attr.fill]="fill" (click)="changeColor(region)" [attr.d]="region.path" />
+    </svg>
+
+    <div class="description">
+    <img src="assets/images/1290164185.jpg" alt="">        
+    </div>
+</div>

@@ -14,6 +14,7 @@ import { MoneyPipe } from './shared/money.pipe';
 import { StreamComponent } from './stream/stream.component';
 import { GamesComponent } from './games/games.component';
 import { CardComponent } from './games/card/card.component';
+import { IntermapsComponent } from './intermaps/intermaps.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CardComponent } from './games/card/card.component';
     MoneyPipe,
     StreamComponent,
     GamesComponent,
-    CardComponent
+    CardComponent,
+    IntermapsComponent
   ],
   imports: [
     BrowserModule,
