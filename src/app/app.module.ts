@@ -15,6 +15,7 @@ import { StreamComponent } from './stream/stream.component';
 import { GamesComponent } from './games/games.component';
 import { CardComponent } from './games/card/card.component';
 import { IntermapsComponent } from './intermaps/intermaps.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IntermapsComponent } from './intermaps/intermaps.component';
     StreamComponent,
     GamesComponent,
     CardComponent,
-    IntermapsComponent
+    IntermapsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
