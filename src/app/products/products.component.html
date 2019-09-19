@@ -1,322 +1,51 @@
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tbody>
-    <tr>
-      <td height="10">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <table width="100%" border="0" cellspacing="0" cellpadding="2">
-        <tbody><tr>
-          <td align="center" valign="top" bgcolor="#fafaf0" style="border: 1px solid #c4c5a6;" height="350px">
-            <table width="98%" border="0" cellspacing="0" cellpadding="0">
-            <tbody><tr>
-              <td align="left" class="centercontent">
-int(5855)
-<script src="/incom/modules/general/script.js"></script>
-<script type="text/javascript">
-function del(i)
-{
-if (confirm("Вы действительно хотите удалить выбранный элемент?"))
-{document.location.href='?start=&id_section=&module=&delete=true&id='+i;}
-}
-
-function del_pr()
-{
-if(document.form_index.actions.options.value!='delete')
-{
-document.form_index.submit();
-}else
-{
-if (confirm("Вы действительно хотите удалить выбранные элементы?"))
-{
-document.form_index.submit();
-}
-}
-
-}
-</script>
-<link href="/assets/style.css" rel="stylesheet" type="text/css">
-
-<form id="form_index" name="form_index" method="post" action="">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tbody><tr>
-<td height="35" class="title_text">
-Группы пользователей
-</td>
-</tr>
-<tr>
-<td height="25" align="left">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-    <td width="62%" align="left">
-      <table width="272" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="272" height="25" align="center" bgcolor="#ebecd2" style="border: 1px solid #c4c5a6;">
-            <table width="95%" border="0" cellspacing="0" cellpadding="2">
-              <tbody><tr>
-                <td width="6%" align="left" class="begin">
-                  ||
-                </td>
-                <td width="62%" align="left" class="cell_border2" onmouseover="this.className='cell_border';" onmouseout="this.className='cell_border2';">
-                  <ul id="filter_menu" class="MenuBarHorizontal MenuBarActive">
-                    <li>
-                      <a href="#" class="MenuBarItemSubmenu">
-                      Дополнительно
-                      </a>
-                      <ul class="">
-                        <li style="height:25px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tbody><tr>
-<td align="left" width="25px"><input name="field_info_group" type="checkbox" value="1" onclick="SectionClick('tr_info_group')"></td>
-<td align="left"><a href="javascript:check('field_info_group');SectionClick('tr_info_group')">Описание группы</a></td>
-</tr>
-</tbody></table>
-</li><li style="height:25px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tbody><tr>
-<td align="left" width="25px"><input name="field_name" type="checkbox" value="1" onclick="SectionClick('tr_name')"></td>
-<td align="left"><a href="javascript:check('field_name');SectionClick('tr_name')">Название</a></td>
-</tr>
-</tbody></table>
-</li>                              </ul>
-                    </li>
-                  </ul>
-                  <script type="text/javascript">
-<!--
-var MenuBar1 = new Spry.Widget.MenuBar("filter_menu");
-//-->
-</script>
-                </td>
-                <td width="32%" align="right">
-                  <table width="12" border="0" cellspacing="0" cellpadding="0">
-                    <tbody><tr>
-                      <td height="12" bgcolor="#fed859">
-                      </td>
-                    </tr>
-                  </tbody></table>
-                </td>
-              </tr>
-            </tbody></table>
-          </td>
-        </tr>
-        <tr>
-          <td align="center" bgcolor="#F7F9E9" style="border-bottom: 1px solid #c4c5a6;border-right: 1px solid #c4c5a6;border-left: 1px solid #c4c5a6;">
-            <table width="95%" border="0" cellspacing="0" cellpadding="0">
-              <tbody><tr>
-                <td height="5">
-                </td>
-              </tr>
-              <tr>
-                <td align="left" class="small_text">
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tbody><tr>
-                      <td align="left">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                          <tbody><tr id="tr_info_group" style="DISPLAY:none">
-                            <td width="35%" class="dot_black" height="30px">Описание группы:</td>
-                            <td width="65%" class="dot_black"><input name="info_group" type="text" id="textfield" size="20" value=""></td>
-                          </tr><tr id="tr_name" style="DISPLAY:none">
-                            <td width="35%" class="dot_black" height="30px">Название:</td>
-                            <td width="65%" class="dot_black"><input name="name" type="text" id="textfield" size="20" value=""></td>
-                          </tr>                                </tbody></table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td height="5">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left">
-                        <input type="submit" name="search" id="search" value="Найти">
-                      </td>
-                    </tr>
-                  </tbody></table>
-                </td>
-              </tr>
-              <tr>
-                <td height="5">
-                </td>
-              </tr>
-            </tbody></table>
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-    <td width="38%" align="right" valign="bottom" class="small_text">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="37%" align="center" class="small_text">
-            <a href="?start=0" class="small_text" style="font-weight:bold">1</a>&nbsp;                  </td>
-          <td width="4%" align="center">
-            |
-          </td>
-          <td width="59%">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tbody><tr>
-                <td width="46%" align="right">
-                  на странице
-                </td>
-                <td width="54%" align="center">
-                  <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
-                    <option value="?number=10" selected="">10</option><option value="?number=20">20</option><option value="?number=40">40</option><option value="?number=80">80</option><option value="?number=100">100</option><option value="?number=1000">1000</option>                          </select>
-                </td>
-              </tr>
-            </tbody></table>
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-  </tr>
-</tbody></table>
-</td>
-</tr>
-<tr>
-<td height="10">
-</td>
-</tr>
-<tr>
-<td height="29" align="center" class="panel_back" style="border: 1px solid #c4c5a6;">
-<table width="98%" border="0" cellspacing="0" cellpadding="0">
-  <tbody><tr>
-    <td width="1%" height="26" align="left">
-      <span class="begin">||</span>
-    </td>
-    <td width="20%" align="center" onmouseover="this.className='cell_border_small';" onmouseout="this.className='small_text';" class="small_text">
-      <table width="90%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="16%" align="center">
-            <a href="add.php?module=shop_group">
-            <img src="/assets/images/blank.gif" alt="добавить информ. блок" width="16" height="21" border="0">
-            </a>
-          </td>
-          <td width="84%" align="center" class="small_text">
-            <a href="add.php?module=shop_group" class="small_text">
-            Добавить группу
-            </a>
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-    <td width="13%" align="center" onmouseover="this.className='cell_border_small';" onmouseout="this.className='small_text';" class="small_text">
-      <table width="90%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="37%" align="center">
-            <a href="?excel=true" target="_blank">
-            <img src="/assets/images/excel.gif" alt="экспорт в excel" width="22" height="22" border="0">
-            </a>
-          </td>
-          <td width="63%" align="center" class="small_text">
-            <a href="?excel=true" target="_blank" class="small_text">
-            Export
-            </a>
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-    <td width="16%" align="center" onmouseover="this.className='cell_border_small';" onmouseout="this.className='small_text';" class="small_text">
-      <table width="90%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="37%" align="center">
-            <a href="/incom/modules/inf_block/option.php?module=shop_group&amp;id_section=">
-            <img src="/assets/images/option.gif" alt="настройка инфор. блока" width="23" height="22" border="0">
-            </a>
-          </td>
-          <td width="63%" align="center" class="small_text">
-            <a href="/incom/modules/inf_block/option.php?module=shop_group&amp;id_section=" class="small_text">
-            Настроить
-            </a>
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-    <td width="17%">&nbsp;
-    </td>
-    <td width="33%" align="center">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td align="center">
-            <select name="actions" id="actions" style="width:130px">
-              <option value="">выбор действия</option><option value="delete">удалить</option>                    </select>
-          </td>
-          <td align="center">
-            <input type="button" name="send" id="send" value="Отправить" onclick="del_pr()">
-          </td>
-        </tr>
-      </tbody></table>
-    </td>
-  </tr>
-</tbody></table>
-</td>
-</tr>
-<tr>
-<td height="10"></td>
-</tr>    <tr>
-<td style="border: 1px solid #c4c5a6;">
-<table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#ecebcf">
-  <tbody><tr>
-    <td height="35" align="center" class="check_table_title">
-      <input type="checkbox" name="allbox" id="allbox" onclick="CheckAll()">
-    </td>
-    <td width="65" align="center" class="check_table_title">
-      Действия
-    </td>
-    <td width="45" align="center" class="check_table_title">
-      ID
-    </td>
-    <td class="top_table_title" width="20%" onmouseover="this.className='top_table_title_back';" onmouseout="this.className='top_table_title';" onclick="document.location.href='index.php?order=#'" title="сортировка по полю Товары">Товары</td>
-<td class="top_table_title" onmouseover="this.className='top_table_title_back';" onmouseout="this.className='top_table_title';" onclick="document.location.href='index.php?order=info_group'" title="сортировка по полю Описание группы">Описание группы</td>
-<td class="top_table_title" onmouseover="this.className='top_table_title_back';" onmouseout="this.className='top_table_title';" onclick="document.location.href='index.php?order=name'" title="сортировка по полю Название">Название</td>
-  </tr>
-  <tr onmouseover="this.bgColor='#f3f2da'" onmouseout="this.bgColor='#fafaf0'" onmouseup="if (!stopMoving()) if (!otherClicks(event)) return CheckTR(this);" onmousedown="startMoving()" id="str3" ondblclick="javascript:document.location.href='edit.php?id=3&amp;module=shop_group'" bgcolor="#fafaf0">
-
-<td width="40" align="center" height="25"><input id="chb3" type="checkbox" onclick="CheckTR(this);" value="3" name="select_ch[]"></td>
-
-<td align="center"><ul id="actions_menu3" class="MenuBarHorizontal MenuBarActive">
-<li><img src="/assets/images/icons_edit.png" border="0">
-<ul class="">
-
-<li style="height:23px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top; text-align:left; padding-left: 23px;"><a href="elements.php?module=shop_users&amp;sub_module=shop_group&amp;id_section=3" class="MenuBarItemSubmenu">пользователи</a></li>
-<li style="height:23px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top; text-align:left; padding-left: 23px;"><a href="/incom/modules/mods/info_block/option.php?module=shop_users&amp;id_section=3" class="">настройка</a></li>
-<li style="height:23px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top; text-align:left; padding-left: 23px;"><a href="edit.php?id=3&amp;module=shop_group" class="">редактировать</a></li>
-<li style="height:23px;background-image: url(/assets/images/menu_03.gif);
-background-repeat: repeat-y;
-background-position: left top; text-align:left; padding-left: 23px;"><a href="javascript:del('3')" class="">удалить</a></li>
-
-</ul>
-</li>
-
-</ul><script type="text/javascript">
-<!--
-var MenuBar1 = new Spry.Widget.MenuBar("actions_menu3", {imgDown:"", imgRight:""});
-//-->
-</script></td>
-<td class="id_block_style" align="center">3</td>
-<td class="table_value"> <a href="elements.php?module=shop_users&amp;sub_module=shop_group&amp;id_section=3" style="color:#72ad0f;font-weight:bold;">5343</a></td><td class="table_value">Физическое лицо&nbsp;</td><td class="table_value">&nbsp;</td></tr>        </tbody></table>
-</td>
-</tr>
-<tr>
-<td height="30" align="right" bgcolor="#ecebcf" class="small_text" style="border: 1px solid #c4c5a6;border-top: 0px solid ;">
-Всего:
-1        &nbsp;&nbsp;&nbsp;&nbsp;
-</td>
-</tr>
-</tbody></table>
-</form>
-</td>
-</tr>
-
-</tbody></table>
-</td>
-          </tr>
-        </tbody></table></td>
+<div class="table-wrap">
+  <div class="filter">
+      <input 
+        type="text"
+        placeholder="Поиск"
+        [(ngModel)]="search"
+      />
+    </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Url</th>
+        <th>Бренд</th>
+        <th>Артикул</th>
+        <th>Наименование</th>
+        <th>Нагрузка</th>
+        <th>Скорость</th>
+        <th>Сезонность</th>
+        <th>Тип</th>
+        <th>Ширина</th>
+        <th>ИН/ИС</th>
+        <th>Шипованые</th>
+        <th>Цена</th>
+        <th>Цена продажи</th>
+        <th>Количество</th>
+        <th>Изображение</th>
       </tr>
-    </tbody></table>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of shiny | search: search">
+        <td data-label="Номер">{{item.id}}</td>
+        <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
+        <td data-label="Бренд">{{item.tire_brand}}</td>
+        <td data-label="Артикул">{{item.article}}</td>
+        <td data-label="Наименование">{{item.tire_name_new}}</td>
+        <td data-label="Нагрузка">{{item.tire_load}}</td>
+        <td data-label="Скорость">{{item.tire_speed}}</td>
+        <td data-label="Сезонность">{{item.tire_time}}</td>
+        <td data-label="Тип ТС">{{item.tire_ts}}</td>
+        <td data-label="Ширина">{{item.tire_width}}</td>
+        <td data-label="ИН/ИС">{{item.tire_rf}}</td>
+        <td data-label="Шипованые">{{item.tire_thorn}}</td>
+        <td data-label="Цена">{{item.tire_price}}</td>
+        <td data-label="Цена продажи">{{item.tire_price1}}</td>
+        <td data-label="Количество">{{item.tire_kol}}</td>
+        <td data-label="Изображение">{{item.tire_photo}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>

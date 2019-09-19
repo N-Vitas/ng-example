@@ -16,6 +16,7 @@ import { GamesComponent } from './games/games.component';
 import { CardComponent } from './games/card/card.component';
 import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
+import { SearchPipe } from './products/search.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductsComponent } from './products/products.component';
     GamesComponent,
     CardComponent,
     IntermapsComponent,
-    ProductsComponent
+    ProductsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
