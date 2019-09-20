@@ -1,12 +1,18 @@
 <div class="table-wrap">
   <div class="panel">
+    <div (click)="toggleTab('shiny')" [class.action]="view == 'shiny'" class="tab">Шины</div>
+    <div (click)="toggleTab('disk')" [class.action]="view == 'disk'" class="tab">Диски</div>
+    <div (click)="toggleTab('oil')" [class.action]="view == 'oil'" class="tab">Масла</div>
+    <div (click)="toggleTab('battery')" [class.action]="view == 'battery'" class="tab">Аккумуляторы</div>
+    <div class="search">
       <input 
         type="text"
         placeholder="Поиск"
         [(ngModel)]="productSearch"
       />
     </div>
-  <table>
+  </div>
+  <table *ngIf="view == 'shiny'">
     <thead>
       <tr>
         <th>Номер</th>
@@ -27,8 +33,8 @@
         <th>Изображение</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let item of products.shiny | search: search | navigations: page">
+    <tbody *ngIf="getPages(); else noProducts">
+      <tr *ngFor="let item of products.shiny | search: productSearch | navigations: page">
         <td data-label="Номер">{{item.id}}</td>
         <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
         <td data-label="Бренд">{{item.tire_brand}}</td>
@@ -48,9 +54,138 @@
       </tr>
     </tbody>
   </table>
+  <table *ngIf="view == 'disk'">
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Url</th>
+        <th>Бренд</th>
+        <th>Артикул</th>
+        <th>Наименование</th>
+        <th>Ширина</th>
+        <th>Диаметр</th>
+        <th>Сверловка</th>
+        <th>Вылет</th>
+        <th>Цвет</th>
+        <th>Тип</th>
+        <th>Цена</th>
+        <th>Цена продажи</th>
+        <th>Количество</th>
+        <th>Изображение</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="getPages(); else noProducts">
+      <tr *ngFor="let item of products.disk | search: productSearch | navigations: page">
+        <td data-label="Номер">{{item.id}}</td>
+        <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
+        <td data-label="Бренд">{{item.disk_brand}}</td>
+        <td data-label="Артикул">{{item.article}}</td>
+        <td data-label="Наименование">{{item.disk_name}}</td>
+        <td data-label="Ширина">{{item.disk_width}}</td>
+        <td data-label="Диаметр">{{item.disk_diam}}</td>
+        <td data-label="Сверловка">{{item.disk_sver}}</td>
+        <td data-label="Вылет">{{item.disk_vilet}}</td>
+        <td data-label="Цвет">{{item.disk_color}}</td>
+        <td data-label="Тип">{{item.disk_type}}</td>
+        <td data-label="Цена">{{item.disk_price}}</td>
+        <td data-label="Цена продажи">{{item.disk_price1}}</td>
+        <td data-label="Количество">{{item.disk_kol}}</td>
+        <td data-label="Изображение">{{item.disk_img}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table *ngIf="view == 'oil'">
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Url</th>
+        <th>Бренд</th>
+        <th>Артикул</th>
+        <th>Наименование</th>
+        <th>Тип жидкости</th>
+        <th>Объем</th>
+        <th>Вязкость 1</th>
+        <th>Вязкость 2</th>
+        <th>Тип двигателя</th>
+        <th>Цена</th>
+        <th>Цена продажи</th>
+        <th>Количество</th>
+        <th>Изображение</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="getPages(); else noProducts">
+      <tr *ngFor="let item of products.oil | search: productSearch | navigations: page">
+        <td data-label="Номер">{{item.id}}</td>
+        <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
+        <td data-label="Бренд">{{item.m_brand}}</td>
+        <td data-label="Артикул">{{item.m_1c}}</td>
+        <td data-label="Наименование">{{item.m_name}}</td>
+        <td data-label="Тип жидкости">{{item.m_type}}</td>
+        <td data-label="Объем">{{item.m_ob}}</td>
+        <td data-label="Вязкость 1">{{item.m_vz1}}</td>
+        <td data-label="Вязкость 2">{{item.m_vz2}}</td>
+        <td data-label="Тип двигателя">{{item.m_dvig}}</td>
+        <td data-label="Цена">{{item.m_price}}</td>
+        <td data-label="Цена продажи">{{item.m_price1}}</td>
+        <td data-label="Количество">{{item.m_kol}}</td>
+        <td data-label="Изображение">{{item.m_img}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table *ngIf="view == 'battery'">
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Url</th>
+        <th>Бренд</th>
+        <th>Артикул</th>
+        <th>Наименование</th>
+        <th>Ширина</th>
+        <th>Высота</th>
+        <th>Длина</th>
+        <th>Емкость</th>
+        <th>Полярность</th>
+        <th>Пусковой</th>
+        <th>Напряжение</th>
+        <th>Гарантия</th>
+        <th>Цена</th>
+        <th>Цена продажи</th>
+        <th>Количество</th>
+        <th>Изображение</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="getPages(); else noProducts">
+      <tr *ngFor="let item of products.battery | search: productSearch | navigations: page">
+        <td data-label="Номер">{{item.id}}</td>
+        <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
+        <td data-label="Бренд">{{item.a_brand}}</td>
+        <td data-label="Артикул">{{item.a_1c}}</td>
+        <td data-label="Наименование">{{item.a_name}}</td>
+        <td data-label="Ширина">{{item.a_width}}</td>
+        <td data-label="Высота">{{item.a_height}}</td>
+        <td data-label="Длина">{{item.a_length}}</td>
+        <td data-label="Емкость">{{item.a_em}}</td>
+        <td data-label="Полярность">{{item.a_pol}}</td>
+        <td data-label="Пусковой ток">{{item.a_tok}}</td>
+        <td data-label="Напряжение">{{item.a_nap}}</td>
+        <td data-label="Гарантия">{{item.a_gar}}</td>
+        <td data-label="Цена">{{item.a_price}}</td>
+        <td data-label="Цена продажи">{{item.a_price1}}</td>
+        <td data-label="Количество">{{item.a_kol}}</td>
+        <td data-label="Изображение">{{item.a_img}}</td>
+      </tr>
+    </tbody>
+  </table>
   <div class="navigation">
-      <button class="btn btn-back" (click)="back()"><<<</button>
-      <span class="total">{{page + limit}} из {{products['total_' + view]}}</span>
-      <button class="btn btn-next" (click)="next()">>>></button>
+      <button class="btn btn-back" [disabled]="page == 0" (click)="back()">предыдущая</button>
+      <span class="total">показано {{page + limit}} из {{getPages()}} записей</span>
+      <button class="btn btn-next" [disabled]="page + limit > getPages()"(click)="next()">следующая</button>
   </div>
 </div>
+
+<ng-template #noProducts>
+    <tr>
+      <td data-label="Записи отсутствуют" colspan="20">Ничего не найдено!</td>
+    </tr>
+    
+</ng-template>

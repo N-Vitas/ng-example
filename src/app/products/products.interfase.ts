@@ -68,7 +68,7 @@ export interface Maslo {
     id_section: number
     version: string
     url: string
-    article: string
+    m_1c: string
     m_brand: string
     m_name: string
     m_type: string

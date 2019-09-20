@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Products } from './products.interfase';
+import { SearchPipe } from './search.pipe';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -32,7 +33,7 @@ export class ProductsComponent implements OnInit {
     .pipe(
       map(data => {
         data.shiny = data.shiny.map(item => ({...item, article: item['1c_code']}));
-        data.disk = data.disk.map(item => ({...item, article: item['1c_code']}));
+        data.disk = data.disk.map(item => ({...item, article: item['1c_code_disk']}));
         return data;
       })
     );
@@ -41,6 +42,18 @@ export class ProductsComponent implements OnInit {
     this.fetch().subscribe(products => {
       this.products = products;
     });
+  }
+  toggleTab(view: string) {
+    this.view = view;
+  }
+  getPages() {
+    if(this.productSearch.length == 0) {
+      return this.products[this.view].length;
+    }
+    const searchPipe = new SearchPipe();
+    const search = searchPipe.transform(this.products[this.view], this.productSearch);
+    return search.length;
+
   }
   back() {
     if(this.page <= this.limit) {
