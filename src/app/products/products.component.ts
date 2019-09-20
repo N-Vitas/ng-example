@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Products, Shiny } from './products.interfase';
+import { Products } from './products.interfase';
 import { Observable } from 'rxjs';
-import { scan, take, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 const options = {
@@ -20,19 +20,40 @@ const url = 'http://old-mastershina.vitas/incom/modules/shop/products/api/'
 })
 export class ProductsComponent implements OnInit {
 
-  private shiny: Shiny[] = [];
-  private search: string = '';
+  private products: Products;
+  private view: string = 'shiny';
+  private views: string[] = ['shiny', 'disk', 'battery', 'oil'];
+  private productSearch: string = '';
+  private page: number = 0;
+  private limit: number = 5;
   constructor(private http: HttpClient) { }
-  fetchShiny(): Observable<Shiny[]> {
+  fetch(): Observable<Products> {
     return this.http.get<Products>(url)
     .pipe(
-      map(data => data.shiny.map(item => ({...item, article: item['1c_code']})))
+      map(data => {
+        data.shiny = data.shiny.map(item => ({...item, article: item['1c_code']}));
+        data.disk = data.disk.map(item => ({...item, article: item['1c_code']}));
+        return data;
+      })
     );
   }
   ngOnInit() {
-    this.fetchShiny().subscribe(shiny => {
-      this.shiny = shiny
+    this.fetch().subscribe(products => {
+      this.products = products;
     });
+  }
+  back() {
+    if(this.page <= this.limit) {
+      this.page = 0;
+    } else {
+      this.page = this.page - this.limit;
+    }
+  }
+  next() {
+    if(this.page > this[`total_${this.view}`]) {
+      return;
+    }
+    this.page = this.page + this.limit;
   }
 
 }

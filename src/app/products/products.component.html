@@ -1,9 +1,9 @@
 <div class="table-wrap">
-  <div class="filter">
+  <div class="panel">
       <input 
         type="text"
         placeholder="Поиск"
-        [(ngModel)]="search"
+        [(ngModel)]="productSearch"
       />
     </div>
   <table>
@@ -28,7 +28,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of shiny | search: search">
+      <tr *ngFor="let item of products.shiny | search: search | navigations: page">
         <td data-label="Номер">{{item.id}}</td>
         <a href="#"><td data-label="Url адрес">{{item.url}}</td></a>
         <td data-label="Бренд">{{item.tire_brand}}</td>
@@ -47,5 +47,10 @@
         <td data-label="Изображение">{{item.tire_photo}}</td>
       </tr>
     </tbody>
-</table>
+  </table>
+  <div class="navigation">
+      <button class="btn btn-back" (click)="back()"><<<</button>
+      <span class="total">{{page + limit}} из {{products['total_' + view]}}</span>
+      <button class="btn btn-next" (click)="next()">>>></button>
+  </div>
 </div>

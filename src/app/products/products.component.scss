@@ -1,8 +1,7 @@
 body {
-    text-align: center;
-    padding-top: 10%;
-    font-family: sans-serif;
-//   background-image: url('bg.jpg');
+  text-align: center;
+  padding-top: 10%;
+  font-family: sans-serif;
   background-size: cover;
   height: 100vh;
   color: #fff;
@@ -15,10 +14,18 @@ body {
   padding: 2rem 2rem;
   color: #000;
   overflow: auto;
-  .filter {
+  .panel {
     width: 100%;
-    height: 40px;
+    // height: 64px;
+    border: 1px solid #ccc;
+    margin:0;
     margin-bottom: 10px;
+    padding: 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    user-select: none;
     input {
       flex-basis: 80%;
       border: 1px solid #ccc;
@@ -26,6 +33,24 @@ body {
       outline: none;
       padding: 10px .5rem;
       float: left;
+    }
+  }
+  .navigation {
+    width: 100%;
+    // height: 64px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    margin:0;
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    user-select: none;
+    .btn {
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin: 0 5px;
     }
   }
 }
@@ -49,8 +74,10 @@ body {
     a {
       color: #db1a1a;
       text-decoration: none;
+      filter: contrast(0.7);
       &:hover{
-        font-weight: bold;
+        filter: contrast(1);
+        text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.5)
       }
     }
   }
