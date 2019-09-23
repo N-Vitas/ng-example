@@ -1,0 +1,40 @@
+.left-maps{
+    position: absolute;
+    top: 10;
+    left: 10;
+    width: 100%;
+    max-width: 300px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-x: hidden;
+    user-select: none;
+}
+.maps {
+    width: 100%;
+    max-width: 768px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.drop {
+    width: 2000px;
+    height: 2000px;
+    border: 1px solid #ddd;
+    background: #ccc;
+    cursor: pointer;
+}
+.divlayout{
+    width: 100%;
+    background-color: #ccc;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    border: 3px solid #65981c;
+    background: #73AD21;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+ }

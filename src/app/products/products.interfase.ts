@@ -92,3 +92,14 @@ export interface Products {
     battery: Battery[]
     oil: Maslo[]
 }
+
+export const emptyProduct = () => ({
+    total_shiny: 0,
+    total_disk: 0,
+    total_battery: 0,
+    total_oil: 0,
+    shiny: [],
+    disk: [],
+    battery: [],
+    oil: [],
+});

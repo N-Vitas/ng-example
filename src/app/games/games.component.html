@@ -1,11 +1,14 @@
 <div class="component">
-    <div class="left-container">
+    <!-- <div class="left-container">
         <button type="button" (click)="add()"><img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img"></button>
-    </div>
+    </div> -->
     <div class="container">
-        <app-card *ngFor="let card of cards" [card]="card"></app-card>
+        <div cdkDrag>
+            <app-card *ngFor="let card of cards" [card]="card"></app-card>
+        </div>
     </div>
-    <div class="rigth-container">
+    <img src="http://megapolis.mobi/img/obj/01.png" cdkDrag />
+    <!-- <div class="rigth-container">
         <div class="map"></div>
-    </div>
+    </div> -->
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Products } from './products.interfase';
+import { Products, emptyProduct } from './products.interfase';
 import { SearchPipe } from './search.pipe';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -21,7 +21,7 @@ const url = 'http://old-mastershina.vitas/incom/modules/shop/products/api/'
 })
 export class ProductsComponent implements OnInit {
 
-  private products: Products;
+  private products: Products = emptyProduct();
   private view: string = 'shiny';
   private views: string[] = ['shiny', 'disk', 'battery', 'oil'];
   private productSearch: string = '';

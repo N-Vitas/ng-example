@@ -13,7 +13,14 @@ export class SortPipe implements PipeTransform {
     }
     return arr.sort((a, b) => {
       console.log(view, asc, a[view] > b[view]);
-      return asc ? a[view] > b[view] : a[view] < b[view];
+      if(asc) {
+        if(a[view] > b[view]) { return -1; }
+        if(a[view] < b[view]) { return 1; }
+        return 0;
+      }
+      if(a[view] > b[view]) { return 1; }
+      if(a[view] < b[view]) { return -1; }
+      return 0;
     })
   }
 

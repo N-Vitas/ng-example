@@ -1,6 +1,6 @@
 <div class="map">
     <svg>
-        <path *ngFor="let region of regions" [ngClass]="region.action ? 'active': region.name" [attr.fill]="fill" (click)="changeColor(region)" [attr.d]="region.path" />
+        <path cdkDrag *ngFor="let region of regions" [ngClass]="region.action ? 'active': region.name" [attr.fill]="fill" (click)="changeColor(region)" [attr.d]="region.path" />
     </svg>
 
     <div class="description">

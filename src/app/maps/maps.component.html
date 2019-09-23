@@ -1,0 +1,20 @@
+<div class="left-maps">
+    <h3>Angular 8 - Drag and Drop Module</h3>
+    <div cdkDropList
+    #personList = "cdkDropList"
+    [cdkDropListData] = "personaldetails"
+    [cdkDropListConnectedTo] = "[userlist]"
+    class = "example-list"
+    (cdkDropListDropped) = "onDrop($event)" >
+    
+    <div *ngFor = "let item of personaldetails; 
+        let i = index" class = "divlayout" cdkDrag>
+        {{item}}
+    </div >
+    </div>
+</div>
+<div class="maps">
+    <div class="drop" cdkDrag>
+        <app-games></app-games>
+    </div>
+</div>

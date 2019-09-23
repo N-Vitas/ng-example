@@ -6,9 +6,11 @@ import { StreamComponent } from './stream/stream.component';
 import { GamesComponent } from './games/games.component';
 import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
+import { MapsComponent } from './maps/maps.component';
 
 const routes: Routes = [
-  { path: '', component: ProductsComponent },
+  { path: '', component: MapsComponent },
+  { path: 'products', component: ProductsComponent },
   { path: 'games', component: GamesComponent},
   { path: 'todo', component: TodosComponent },
   { path: 'stream', component: StreamComponent },

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
 import { SearchPipe } from './products/search.pipe';
 import { NavigationsPipe } from './products/navigations.pipe';
+import { MapsComponent } from './maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import { NavigationsPipe } from './products/navigations.pipe';
     IntermapsComponent,
     ProductsComponent,
     SearchPipe,
-    NavigationsPipe
+    NavigationsPipe,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
