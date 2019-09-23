@@ -9,12 +9,41 @@ import { SteamsService } from '../shared/steams.service'
 })
 export class MapsComponent implements OnInit {
   title = 'Angular 8 Project!';
+
+  todo = [
+    'Get to work',
+    'Pick up groceries',
+    'Go home',
+    'Fall asleep'
+  ];
+
+  done = [
+    'Get up',
+    'Brush teeth',
+    'Take a shower',
+    'Check e-mail',
+    'Walk dog'
+  ];
+
   public personaldetails = [];
   constructor(private myservice: SteamsService) {}
   ngOnInit() {
      this.myservice.ready().subscribe((data) => (this.personaldetails = data));
   }
-  onDrop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>) {
+    //  if (event.previousContainer === event.container) {
+    //     moveItemInArray(event.container.data, 
+    //        event.previousIndex, event.currentIndex);
+    //  } else {
+    //     transferArrayItem(event.previousContainer.data,
+    //     event.container.data,
+    //     event.previousIndex,
+    //     event.currentIndex);
+    //  }
+
+    moveItemInArray(this.personaldetails, event.previousIndex, event.currentIndex);
+  }
+  dropMove(event: CdkDragDrop<string[]>) {
      if (event.previousContainer === event.container) {
         moveItemInArray(event.container.data, 
            event.previousIndex, event.currentIndex);

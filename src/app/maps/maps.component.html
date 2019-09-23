@@ -1,20 +1,40 @@
 <div class="left-maps">
     <h3>Angular 8 - Drag and Drop Module</h3>
-    <div cdkDropList
-    #personList = "cdkDropList"
-    [cdkDropListData] = "personaldetails"
-    [cdkDropListConnectedTo] = "[userlist]"
-    class = "example-list"
-    (cdkDropListDropped) = "onDrop($event)" >
-    
-    <div *ngFor = "let item of personaldetails; 
-        let i = index" class = "divlayout" cdkDrag>
-        {{item}}
-    </div >
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let movie of personaldetails" cdkDrag>{{movie}}</div>
     </div>
 </div>
 <div class="maps">
     <div class="drop" cdkDrag>
         <app-games></app-games>
+    </div>
+</div>
+<div class="right-maps">
+    <div class="example-container">
+        <h2>To do</h2>
+        
+        <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list"
+            (cdkDropListDropped)="dropMove($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        </div>
+    </div>
+    
+    <div class="example-container">
+        <h2>Done</h2>
+        
+        <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[todoList]"
+            class="example-list"
+            (cdkDropListDropped)="dropMove($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        </div>
     </div>
 </div>
