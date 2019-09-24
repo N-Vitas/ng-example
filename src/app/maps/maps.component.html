@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="maps">
-    <div class="drop" cdkDrag>
+    <div class="drop">
         <app-games></app-games>
     </div>
 </div>
@@ -34,7 +34,7 @@
             [cdkDropListConnectedTo]="[todoList]"
             class="example-list"
             (cdkDropListDropped)="dropMove($event)">
-            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+            <div class="example-box-block" *ngFor="let item of done" cdkDrag>{{item}}</div>
         </div>
     </div>
 </div>

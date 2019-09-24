@@ -4,10 +4,10 @@
     </div> -->
     <div class="container">
         <div cdkDrag>
-            <app-card *ngFor="let card of cards" [card]="card"></app-card>
+            <app-card (click)="double(card)" *ngFor="let card of cards" [card]="card"></app-card>
         </div>
     </div>
-    <img src="http://megapolis.mobi/img/obj/01.png" cdkDrag />
+    <!-- <img src="http://megapolis.mobi/img/obj/01.png" cdkDrag /> -->
     <!-- <div class="rigth-container">
         <div class="map"></div>
     </div> -->

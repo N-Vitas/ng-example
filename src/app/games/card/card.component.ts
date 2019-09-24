@@ -4,6 +4,8 @@ import { openClose, flipBoxFront, flipBoxBack } from '../../app.animations';
 export interface Card {
   name: string
   action: boolean
+  disabled: boolean
+  id: number
 }
 
 @Component({
@@ -23,6 +25,7 @@ export class CardComponent{
   constructor() {
   }
   change() {
+    if (this.card.disabled) { return; }
     this.card.action = !this.card.action;
   }
 }

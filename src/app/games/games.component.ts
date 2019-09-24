@@ -17,22 +17,40 @@ import { openClose, flipBoxFront, flipBoxBack } from '../app.animations';
 })
 export class GamesComponent implements OnInit {
   private cards: Card[] = [];
-  constructor() { }
+  private select: Card = this.empty();
+  constructor() { 
+    this.rand = this.rand.bind(this);
+  }
 
   ngOnInit() {
-    this.ready().subscribe(v => this.cards = v)
+    this.ready().subscribe(v => {
+      this.cards = v.map((card, index) => ({...card, id: index}));
+      this.refresh();
+    })
+  }
+
+  empty(): Card {
+    return { name: '' , action: false, disabled: true, id: 0 };
   }
 
   ready(): Observable<Card[]> {
     const empty: Card[] = [];
     return from(names)
     .pipe(
-      scan((acc: Card[], v: string) => acc.concat({ name: v , action: true }), empty)
+      scan((acc: Card[], v: string) => acc.concat({ name: v , action: true, disabled: false, id: 0 }), empty)
     );
   }
+  rand(card:Card): Card {
+    return this.cards[Math.floor((Math.random()*this.cards.length))];
+  }
+  refresh() {
+    this.cards = this.cards.sort(() => 0.5 - Math.random())
+  }
   add() {
-    const newCard: Card = { name: `Карта ${this.cards.length}`, action: true };
+    const newCard: Card = { name: `Карта ${this.cards.length}`, action: true, disabled: false, id: 0 };
     this.cards.push(newCard);
+  }
+  double(card: Card) {
   }
 
 }
