@@ -20,6 +20,7 @@ import { ProductsComponent } from './products/products.component';
 import { SearchPipe } from './products/search.pipe';
 import { NavigationsPipe } from './products/navigations.pipe';
 import { MapsComponent } from './maps/maps.component';
+import { HourceComponent } from './hource/hource.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MapsComponent } from './maps/maps.component';
     ProductsComponent,
     SearchPipe,
     NavigationsPipe,
-    MapsComponent
+    MapsComponent,
+    HourceComponent
   ],
   imports: [
     BrowserModule,

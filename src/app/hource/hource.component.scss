@@ -1,0 +1,39 @@
+.field {
+    display: flex;
+    margin: 50px auto;
+    border: 2px solid #000;
+    width: 640px;
+    height: 640px;
+    flex-wrap: wrap;
+}
+.excel {
+    width: 78px;
+    height: 78px;
+    border: 1px solid #000;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ligth {
+    background: rgb(255, 248, 220);
+}
+.dark {
+    background: brown;
+}
+.step {
+    filter: contrast(1.5) drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+}
+.nextstep {
+    filter: brightness(0.5);
+}
+.current {
+    width: 78px;
+    height: 78px;
+    color: transparent;
+    background-size: cover;
+    background: url(/assets/images/horse.png);
+    background-size: 100% 100%;
+    background-position: 0px -10px;
+}

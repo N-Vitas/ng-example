@@ -7,15 +7,17 @@ import { GamesComponent } from './games/games.component';
 import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
 import { MapsComponent } from './maps/maps.component';
+import { HourceComponent } from './hource/hource.component';
 
 const routes: Routes = [
-  { path: '', component: MapsComponent },
+  { path: '', component: HourceComponent },
+  { path: 'maps', component: MapsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'games', component: GamesComponent},
   { path: 'todo', component: TodosComponent },
   { path: 'stream', component: StreamComponent },
   { path: 'money', component: MoneyComponent },
-  { path: 'maps', component: IntermapsComponent },
+  { path: 'svg', component: IntermapsComponent },
 ];
 
 @NgModule({
