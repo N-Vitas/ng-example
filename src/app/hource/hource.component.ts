@@ -3,6 +3,7 @@ import {CdkDragDrop, CdkDragEnd, CdkDragStart, CdkDragMove } from '@angular/cdk/
 import FactoryPiece from './piece';
 import Coordinate from './piece/position';
 import Hource from './piece/hourse';
+import Rook from './piece/rook';
 import { showHide, flyInOut } from '../app.animations';
 
 @Component({
@@ -67,7 +68,6 @@ export class HourceComponent implements OnInit {
     }
   }  
   dragStart(e: CdkDragStart) {
-    // console.log(e)
     // const rect = e.source.element.nativeElement.getBoundingClientRect();
     this.moved = !this.moved;
   }

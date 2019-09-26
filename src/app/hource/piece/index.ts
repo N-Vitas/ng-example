@@ -1,11 +1,13 @@
 import Coordinate from './position';
 import Hource from './hourse';
+import Rook from './rook';
 
 export default class FactoryPiece {
     static get list() {
         return {
             simple: Coordinate,
             hourse: Hource,
+            rook: Rook,
         };
     }
 
