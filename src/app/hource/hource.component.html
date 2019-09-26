@@ -1,7 +1,7 @@
 <div class="field" cdkDropListGroup>
     <div
         class="excel"
-        [class.step]="hourse.isStep(coord)"
+        [class.step]="isMoved(coord)"
         (click)="next(coord)"
         [ngClass]="coord.color"
         *ngFor="let coord of coords; let i = index"
@@ -9,6 +9,17 @@
         [cdkDropListData]="coord"
         (cdkDropListDropped)="dropMove($event, next)"
     >
-        <div [cdkDragData]="hourse.getStep()" class="current" *ngIf="coord.posX === hourse.posX && coord.posY === hourse.posY" cdkDrag></div>
+        <!-- <div class="title">{{coord.posX}} {{coord.posY}}</div> -->
+        <div @showHide
+            [cdkDragData]="hourse.getStep()"
+            (start)="1500"
+            (cdkDragStarted)="dragStart($event)"
+            (click)="dragStart($event)"
+            (cdkDragMoved)="dragMoved($event)"
+            (cdkDragEnded)="dragEnded($event)"
+            class="current"
+            *ngIf="coord.posX === hourse.posX && coord.posY === hourse.posY"
+            cdkDrag
+        ></div>
     </div>
 </div>

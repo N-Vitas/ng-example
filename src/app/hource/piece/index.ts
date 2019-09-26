@@ -16,6 +16,7 @@ export default class FactoryPiece {
         member.define = function(){
             console.log(`${this.name}: (${this.type})`)
         }
+        // FactoryPiece.models.push(member);
         return member;
     }
 }

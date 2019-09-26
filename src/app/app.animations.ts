@@ -3,6 +3,8 @@ import {
     state,
     style,
     animate,
+    query,
+    stagger,
     // keyframes,
     transition
 } from '@angular/animations';
@@ -13,6 +15,26 @@ export const openClose = trigger('openClose', [
     transition('false <=> true', animate(500))
 ]);
   
+export const showHide = trigger('showHide', [
+    transition(':enter', [
+        style({ transform: 'scale(0)' }),
+        animate(200, style({ transform: 'scale(1)' }))
+    ]),
+    transition(':leave', [
+        style({ transform: 'scale(1)' }),
+        animate(200, style({ transform: 'scale(0)'  }))
+    ]),
+]);
+export const flyInOut = trigger('flyInOut', [
+    state('in', style({ transform: 'translateX(0)' })),
+    transition('void => *', [
+      style({ transform: 'translateX(-100%)' }),
+      animate(100)
+    ]),
+    transition('* => void', [
+      animate(100, style({ transform: 'translateX(100%)' }))
+    ])
+])
 export const flipBoxFront = trigger('flipBoxFront', [
     state('true', style({
         'background-size': 'cover',

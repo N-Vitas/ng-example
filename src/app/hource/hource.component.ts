@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, CdkDragEnd, CdkDragStart, CdkDragMove } from '@angular/cdk/drag-drop';
 import FactoryPiece from './piece';
 import Coordinate from './piece/position';
 import Hource from './piece/hourse';
+import { showHide, flyInOut } from '../app.animations';
 
 @Component({
   selector: 'app-hource',
   templateUrl: './hource.component.html',
-  styleUrls: ['./hource.component.scss']
+  styleUrls: ['./hource.component.scss'],
+  animations: [showHide, flyInOut],
 })
 export class HourceComponent implements OnInit {
 
   private coords: Coordinate[] = [];
   private hourse: Hource;
+  private moved: boolean;
   constructor() { }
 
   ngOnInit() {
@@ -38,17 +41,20 @@ export class HourceComponent implements OnInit {
     this.hourse = FactoryPiece.create(h.posX, h.posY, 'hourse');
     this.hourse.next();
   }
-
+  isMoved(coord: Coordinate) {
+    if(this.moved){
+      return this.hourse.isStep(coord)
+    }
+    return this.moved;
+  }
   next(h: Coordinate) {
-    if(this.hourse.isStep(h)){
+    if(this.hourse.isStep(h) && this.moved){
       this.hourse = FactoryPiece.create(h.posX, h.posY, 'hourse');
       this.hourse.next();
+      this.moved = false;
     }
   }
-  dragMoved(e) {
-    console.log(e);
-  }
-  dropMove(event: CdkDragDrop<Coordinate>, callback: (cord: Coordinate)=>{}) {
+  dropMove(event: CdkDragDrop<Coordinate>) {
     const cord = event.item.data.filter(c => {
       const { posX, posY } = event.container.data;
       if(c.posX == posX && c.posY === posY){
@@ -56,16 +62,18 @@ export class HourceComponent implements OnInit {
       }
       return false
     })
-    console.log(this.next(cord))
-    if (cord) {
-      callback(cord);
+    if (cord.length > 0) {
+      this.next(cord[0]);
     }
-    // else {
-    //    transferArrayItem(event.previousContainer.data,
-    //    event.container.data,
-    //    event.previousIndex,
-    //    event.currentIndex);
-    // }
+  }  
+  dragStart(e: CdkDragStart) {
+    // console.log(e)
+    // const rect = e.source.element.nativeElement.getBoundingClientRect();
+    this.moved = !this.moved;
   }
-
+  dragMoved(e: CdkDragMove) {
+    this.moved = true;
+  }
+  dragEnded(e: CdkDragEnd) {
+  }
 }
