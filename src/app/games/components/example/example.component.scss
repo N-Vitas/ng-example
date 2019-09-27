@@ -1,0 +1,57 @@
+.component {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: aqua;
+}
+.container{
+    width: 100%;
+    max-width: 768px;
+    height: 768px;
+    margin: 0 auto;
+    margin-top: -65px;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, .5);
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+    // overflow-y: auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(110px) rotateX(5deg);
+}
+.left-container, .rigth-container {
+    position: absolute;
+    top: 10px;
+    width: 200px;
+    height: 768px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    button {
+        background-color: transparent;
+        border: 2px solid #fff;
+        border-radius: 2px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 25px;
+        padding: 15px 20px;
+        text-transform: uppercase;
+    }
+}
+.left-container {
+    left: 10px;
+}
+.rigth-container {
+    right: 10px;
+}

@@ -21,6 +21,7 @@ import { SearchPipe } from './products/search.pipe';
 import { NavigationsPipe } from './products/navigations.pipe';
 import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
+import { ExampleComponent } from './games/components/example/example.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HourceComponent } from './hource/hource.component';
     SearchPipe,
     NavigationsPipe,
     MapsComponent,
-    HourceComponent
+    HourceComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,

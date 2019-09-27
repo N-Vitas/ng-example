@@ -10,10 +10,10 @@ import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
 
 const routes: Routes = [
-  { path: '', component: HourceComponent },
+  { path: '', component: GamesComponent},
+  { path: 'games', component: HourceComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'games', component: GamesComponent},
   { path: 'todo', component: TodosComponent },
   { path: 'stream', component: StreamComponent },
   { path: 'money', component: MoneyComponent },

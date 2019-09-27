@@ -39,7 +39,7 @@ export class HourceComponent implements OnInit {
       }
     }
     const h = this.coords[Math.floor(this.coords.length * Math.random())];
-    this.hourse = FactoryPiece.create(h.posX, h.posY, 'hourse');
+    this.hourse = FactoryPiece.create(h.posX, h.posY, 'rook');
     this.hourse.next();
   }
   isMoved(coord: Coordinate) {
@@ -50,7 +50,7 @@ export class HourceComponent implements OnInit {
   }
   next(h: Coordinate) {
     if(this.hourse.isStep(h) && this.moved){
-      this.hourse = FactoryPiece.create(h.posX, h.posY, 'hourse');
+      this.hourse = FactoryPiece.create(h.posX, h.posY, 'rook');
       this.hourse.next();
       this.moved = false;
     }
