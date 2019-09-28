@@ -5,7 +5,7 @@ export class AbstractPosition implements AbstractPlayerMaps{
     private _posY: number;
     private _color: string;
     private _type: string;
-    private _index: any;
+    private _index: boolean;
     private _playerMaps: PlayerMaps;
     get posX(): number { return this._posX };
     get posY(): number { return this._posY };
@@ -16,7 +16,7 @@ export class AbstractPosition implements AbstractPlayerMaps{
     set posY(posY: number){ this._posY = posY };
     set color(color: string){ this._color = color };
     set type(type: string){ this._type = type };
-    set index(index: any){ this._index = index };
+    set index(index: boolean){ this._index = index };
     constructor() {
         if (new.target === AbstractPosition) {
             throw new TypeError("Cannot construct Abstract instances directly");

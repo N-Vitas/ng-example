@@ -1,23 +1,10 @@
 <div>
-    <div>От кого {{from}}
-        <select [(ngModel)]="from">
-            <option *ngFor="let player of players" [value]="player">{{player}}</option>
-        </select>
-    </div>
-    <div>От кого {{to}}
-        <select [(ngModel)]="to">
-            <option *ngFor="let player of players" [value]="player">{{player}}</option>
-        </select>
-    </div>
-    <div>Сообщение <input type="text" [(ngModel)]="message"/></div>
-    <div><input type="button" (click)="send()" value="Отправить" /></div>
-    <div *ngFor="let msg of list">{{msg}}</div>
-
     <div class="field" cdkDropListGroup>
         <div
             class="excel"
             *ngFor="let coord of coords; let i = index"
             cdkDropList
+            [class.dark]="coord.index"
             [cdkDropListData]="coord"
             (cdkDropListDropped)="dropMove($event, next)"
         >
@@ -35,4 +22,17 @@
             ></div> -->
         </div>
     </div>
+    <div>От кого {{from}}
+        <select [(ngModel)]="from">
+            <option *ngFor="let player of players" [value]="player">{{player}}</option>
+        </select>
+    </div>
+    <div>От кого {{to}}
+        <select [(ngModel)]="to">
+            <option *ngFor="let player of players" [value]="player">{{player}}</option>
+        </select>
+    </div>
+    <div>Сообщение <input type="text" [(ngModel)]="message"/></div>
+    <div><input type="button" (click)="send()" value="Отправить" /></div>
+    <div *ngFor="let msg of list">{{msg}}</div>
 </div>
