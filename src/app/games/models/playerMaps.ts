@@ -32,9 +32,9 @@ export class PlayerMaps implements Maps {
         }
     }
     generate() {
-        let x=1, y=8;
-        for(let i = 0; i < 64; i++) {
-            if(x > 8) {
+        let x=1, y=10;
+        for(let i = 0; i < 100; i++) {
+            if(x > 10) {
                 x = 1;
                 y++;
             }

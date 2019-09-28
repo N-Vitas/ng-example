@@ -11,8 +11,8 @@ import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'games', component: GamesComponent },
+  { path: '', component: GamesComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'chess', component: HourceComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'products', component: ProductsComponent },

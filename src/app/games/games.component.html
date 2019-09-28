@@ -21,7 +21,7 @@
             [cdkDropListData]="coord"
             (cdkDropListDropped)="dropMove($event, next)"
         >
-            <!-- <div class="title">{{isMoved(coord)}} {{coord.posY}}</div> -->
+            <div class="title">{{coord.posX}} {{coord.posY}}</div>
             <!-- <div @showHide
                 [cdkDragData]="hourse.getStep()"
                 (start)="1500"
