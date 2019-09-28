@@ -14,7 +14,7 @@ import { MoneyComponent } from './money/money.component';
 import { MoneyPipe } from './shared/money.pipe';
 import { StreamComponent } from './stream/stream.component';
 import { GamesComponent } from './games/games.component';
-import { CardComponent } from './games/card/card.component';
+import { CardComponent } from './games/components/card/card.component';
 import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
 import { SearchPipe } from './products/search.pipe';
@@ -22,6 +22,7 @@ import { NavigationsPipe } from './products/navigations.pipe';
 import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
 import { ExampleComponent } from './games/components/example/example.component';
+import { HomeComponent } from './games/components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ExampleComponent } from './games/components/example/example.component';
     NavigationsPipe,
     MapsComponent,
     HourceComponent,
-    ExampleComponent
+    ExampleComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { openClose, flipBoxFront, flipBoxBack } from '../../app.animations';
+import { openClose, flipBoxFront, flipBoxBack } from '../../../app.animations';
 
 export interface Card {
   name: string
