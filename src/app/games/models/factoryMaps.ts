@@ -1,5 +1,4 @@
 import { Position } from './position';
-import { PlayerMaps } from '.';
 
 export class FactoryMaps {
     static get list() {

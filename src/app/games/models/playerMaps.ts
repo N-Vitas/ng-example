@@ -109,6 +109,11 @@ export class PlayerMaps implements Maps {
             }
             this.cards.set(`x${x}y${y}`, FactoryMaps.create(x,y));
             x++;
+            // if((i % 2 === 0 && y % 2 === 0) || (i % 2 !== 0 && y % 2 !== 0)) {
+            //     this.coords[i].color = 'ligth';
+            // } else {
+            //     this.coords[i].color = 'dark'
+            // }
         }
         // Случайное создание карт гор
         const arr = Array.from(this.cards.keys());

@@ -83,7 +83,7 @@ export class Leaf{
             }
         }
         }
-        console.log(leafs);
+        // console.log(leafs);
         return leafs;
     }
 }

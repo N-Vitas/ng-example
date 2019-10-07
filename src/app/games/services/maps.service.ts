@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Player, PlayerMaps, TravelColor, White, Black, Red } from '../models';
+import { Player, PlayerMaps, TravelColor, White, Black, Red, Yellow } from '../models';
 
 
 @Injectable({
@@ -12,6 +12,7 @@ export class MapsService {
     this.registerPlayer(new Player('Вася', TravelColor.travel(new White())));
     this.registerPlayer(new Player('Лиза', TravelColor.travel(new Black())));
     this.registerPlayer(new Player('Петя', TravelColor.travel(new Red())));
+    this.registerPlayer(new Player('Аня', TravelColor.travel(new Yellow())));
   }
   send(message: string = '', from: string = '', to: string = '') {
     if(this._users.has(from)) {
