@@ -23,6 +23,8 @@ import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
 import { ExampleComponent } from './games/components/example/example.component';
 import { HomeComponent } from './games/components/home/home.component';
+import { SimpleComponent } from './simple/simple.component';
+import { SketchDirective } from './simple/sketch.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HomeComponent } from './games/components/home/home.component';
     MapsComponent,
     HourceComponent,
     ExampleComponent,
-    HomeComponent
+    HomeComponent,
+    SimpleComponent,
+    SketchDirective
   ],
   imports: [
     BrowserModule,

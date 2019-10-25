@@ -9,6 +9,7 @@ import { IntermapsComponent } from './intermaps/intermaps.component';
 import { ProductsComponent } from './products/products.component';
 import { MapsComponent } from './maps/maps.component';
 import { HourceComponent } from './hource/hource.component';
+import { SimpleComponent } from './simple/simple.component';
 
 const routes: Routes = [
   { path: '', component: GamesComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'stream', component: StreamComponent },
   { path: 'money', component: MoneyComponent },
   { path: 'svg', component: IntermapsComponent },
+  { path: 'simple', component: SimpleComponent },  
 ];
 
 @NgModule({
